@@ -1,0 +1,19 @@
+<ul class="todo-list" *ngIf="ObjectTodos.length">
+
+    <li class="todo-item" *ngFor="let task of ObjectTodos" [ngClass]="{completed : task.completed}">
+
+      <button class="checkbox icon" (click)="onCheck(task)">
+        <i class="material-icons">{{task.completed ? 'check_box' : 'check_box_outline_blank'}}</i>
+      </button>
+
+      <span class="title">{{ task.title }}</span>
+
+      <div class="actions">
+        <button class="delete icon" (click)="onDelete(task)">
+          <i class="material-icons">delete</i>
+        </button>
+      </div>
+
+    </li>
+
+</ul>
